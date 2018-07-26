@@ -3,7 +3,43 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoroWinnicaStore.Core", "BoroWinnicaStore.Core\BoroWinnicaStore.Core.csproj", "{75A13A19-9964-4851-9EDE-73B5862D52A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoroWinnicaStore.Services", "BoroWinnicaStore.Services\BoroWinnicaStore.Services.csproj", "{96E50D8D-F31D-4241-839F-9896FF4CE2DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoroWinnicaStore.DataAccess.SQL", "BoroWinnicaStore.DataAccess.SQL\BoroWinnicaStore.DataAccess.SQL.csproj", "{8AEDAA50-D3F3-4E5D-B84A-D54162690801}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoroWinnicaStore.WebUI", "BoroWinnicaStore.WebUI\BoroWinnicaStore.WebUI.csproj", "{CAA203F0-9FC6-4AE8-AFCA-B608DB8F4DEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoroWinnicaStore.WebUI.Tests", "BoroWinnicaStore.WebUI.Tests\BoroWinnicaStore.WebUI.Tests.csproj", "{DCFB5CDF-CB7F-4587-AB82-004DA290F749}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75A13A19-9964-4851-9EDE-73B5862D52A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75A13A19-9964-4851-9EDE-73B5862D52A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75A13A19-9964-4851-9EDE-73B5862D52A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75A13A19-9964-4851-9EDE-73B5862D52A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96E50D8D-F31D-4241-839F-9896FF4CE2DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96E50D8D-F31D-4241-839F-9896FF4CE2DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96E50D8D-F31D-4241-839F-9896FF4CE2DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96E50D8D-F31D-4241-839F-9896FF4CE2DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AEDAA50-D3F3-4E5D-B84A-D54162690801}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AEDAA50-D3F3-4E5D-B84A-D54162690801}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AEDAA50-D3F3-4E5D-B84A-D54162690801}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AEDAA50-D3F3-4E5D-B84A-D54162690801}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAA203F0-9FC6-4AE8-AFCA-B608DB8F4DEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAA203F0-9FC6-4AE8-AFCA-B608DB8F4DEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAA203F0-9FC6-4AE8-AFCA-B608DB8F4DEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAA203F0-9FC6-4AE8-AFCA-B608DB8F4DEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCFB5CDF-CB7F-4587-AB82-004DA290F749}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCFB5CDF-CB7F-4587-AB82-004DA290F749}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCFB5CDF-CB7F-4587-AB82-004DA290F749}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCFB5CDF-CB7F-4587-AB82-004DA290F749}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
