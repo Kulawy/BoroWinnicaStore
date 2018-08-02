@@ -9,6 +9,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using BoroWinnicaStore.WebUI.Models;
+using BoroWinnicaStore.Core.Models;
+using BoroWinnicaStore.Core.Contracts;
 
 namespace BoroWinnicaStore.WebUI.Controllers
 {
@@ -17,9 +19,11 @@ namespace BoroWinnicaStore.WebUI.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private IRepository<Customer> CustomerRepository;
 
-        public AccountController()
+        public AccountController(IRepository<Customer> customerRepository)
         {
+            CustomerRepository = customerRepository;
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )

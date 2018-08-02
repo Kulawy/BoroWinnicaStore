@@ -9,7 +9,7 @@ namespace BoroWinnicaStore.Core.Contracts
 {
     public interface IRepository<T> where T: BaseEntity
     {
-        IQueryable<T> Collection();
+        IQueryable<T> ItemsCollection();
         void Comit();
         void Delete(string Id);
         T Find(string Id);
