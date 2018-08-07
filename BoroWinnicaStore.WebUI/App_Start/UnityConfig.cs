@@ -58,7 +58,7 @@ namespace BoroWinnicaStore.WebUI
             container.RegisterType<IRepository<Order>, SQLRepository<Order>>();
 
             container.RegisterType<IBasketService, BasketService>();
-            container.RegisterType<IOrederService, OrderService>();
+            container.RegisterType<IOrderService, OrderService>();
 
         }
     }

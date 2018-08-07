@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BoroWinnicaStore.Services
 {
-    public class OrderService : IOrederService
+    public class OrderService : IOrderService
     {
 
         IRepository<Order> orderContext;

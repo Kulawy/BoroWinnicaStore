@@ -1,6 +1,5 @@
 ﻿using BoroWinnicaStore.Core.Contracts;
 using BoroWinnicaStore.Core.Models;
-using BoroWinnicaStore.Core.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -61,9 +60,11 @@ namespace BoroWinnicaStore.Services
             basketContext.Insert(basket);
             basketContext.Comit();
 
-            HttpCookie cookie = new HttpCookie(BASKET_SESSION_NAME);
-            cookie.Value = basket.Id;
-            cookie.Expires = DateTime.Now.AddDays(1);
+            HttpCookie cookie = new HttpCookie(BASKET_SESSION_NAME)
+            {
+                Value = basket.Id,
+                Expires = DateTime.Now.AddDays(1)
+            };
             httpContext.Response.Cookies.Add(cookie);
 
             return basket;
