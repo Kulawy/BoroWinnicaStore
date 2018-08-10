@@ -126,7 +126,7 @@ namespace BoroWinnicaStore.WebUI.Controllers
         }
 
         // GET: ProductManager/Delete/5
-        public ActionResult Delete(int Id)
+        public ActionResult Delete(string Id)
         {
             Product productToDelete = context.Find(Id);
             if (productToDelete == null)

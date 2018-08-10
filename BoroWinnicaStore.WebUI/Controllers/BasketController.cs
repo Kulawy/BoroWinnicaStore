@@ -11,43 +11,49 @@ namespace BoroWinnicaStore.WebUI.Controllers
     public class BasketController : Controller
     {
 
-        IRepository<Customer> Customers;
-        IBasketService BasketService;
-        IOrderService OrderService;
+        IRepository<Customer> customers;
+        IBasketService basketService;
+        IOrderService orderService;
 
 
-        public BasketController(IBasketService basketService, IOrderService orderService, IRepository<Customer> customers)
+        public BasketController(IBasketService BasketService, IOrderService OrderService, IRepository<Customer> Customers)
         {
-            Customers = customers;
-            BasketService = basketService;
-            OrderService = orderService;
+            customers = Customers;
+            basketService = BasketService;
+            orderService = OrderService;
         }
 
         // GET: Basket
         public ActionResult Index()
         {
-            var model = BasketService.GetBasketItems(this.HttpContext);
+            var model = basketService.GetBasketItems(this.HttpContext);
             return View(model);
         }
 
         public ActionResult AddToBasket(string Id)
         {
-            BasketService.AddToBasket(this.HttpContext, Id);
+            basketService.AddToBasket(this.HttpContext, Id);
 
             return RedirectToAction("Index");
         }
 
         public ActionResult RemoveFromBasket(string Id)
         {
-            BasketService.RemoveFromBasket(this.HttpContext, Id);
+            basketService.RemoveFromBasket(this.HttpContext, Id);
 
             return RedirectToAction("Index");
+        }
+
+        public PartialViewResult BasketSummary()
+        {
+            var basketSummary = basketService.GetBasketSummary(this.HttpContext);
+            return PartialView(basketSummary);
         }
 
         [Authorize]
         public ActionResult Checkout()
         {
-            Customer customer = Customers.ItemsCollection().FirstOrDefault(c => c.Email == User.Identity.Name);
+            Customer customer = customers.ItemsCollection().FirstOrDefault(c => c.Email == User.Identity.Name);
 
             if (customer != null)
             {
@@ -72,15 +78,15 @@ namespace BoroWinnicaStore.WebUI.Controllers
         [Authorize]
         public ActionResult Checkout(Order order)
         {
-            var basketItems = BasketService.GetBasketItems(this.HttpContext);
+            var basketItems = basketService.GetBasketItems(this.HttpContext);
             order.OrderStatus = "Order Created";
             order.Email = User.Identity.Name;
 
             //payment process
 
             order.OrderStatus = "Payment Processed";
-            OrderService.CreateOrder(order, basketItems);
-            BasketService.ClearBasket(this.HttpContext);
+            orderService.CreateOrder(order, basketItems);
+            basketService.ClearBasket(this.HttpContext);
 
             return RedirectToAction("Thanks", new { OrderId = order.Id});
         }

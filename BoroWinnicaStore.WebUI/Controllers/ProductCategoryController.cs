@@ -54,13 +54,13 @@ namespace BoroWinnicaStore.WebUI.Controllers
         }
 
         // GET: ProductCategory/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(string Id)
         {
             ProductCategory productCategoryToEdit = context.Find(Id);
             if (productCategoryToEdit == null)
                 return HttpNotFound();
             else
-                return View(productCategoryToEdit)
+                return View(productCategoryToEdit);
         }
 
         // POST: ProductCategory/Edit/5
@@ -90,7 +90,7 @@ namespace BoroWinnicaStore.WebUI.Controllers
             if (productCategoryToDelete == null)
                 return HttpNotFound();
             else
-                return View(productCategoryToDelete)
+                return View(productCategoryToDelete);
 
         }
 
